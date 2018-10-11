@@ -1,4 +1,5 @@
 module.exports = {
+    pathPrefix: `/whitehall-helper`,
     plugins: [
         {
           resolve: `gatsby-plugin-typography`,
