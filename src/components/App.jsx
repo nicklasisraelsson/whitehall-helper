@@ -1,6 +1,7 @@
 import React from "react"
 import Location from "./Location";
 import locations from "../data/locations";
+import Map from "./Map";
 
 const getRandom = (max) => (Math.floor(Math.random() * Math.floor(max)))
 
@@ -10,11 +11,10 @@ export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            ...this.getLocations(),
-            keepUL: false,
-            keepUR: false,
-            keepLL: false,
-            keepLR: false
+            upperLeft: getRandomLocation(locations.upperLeft),
+            upperRight: getRandomLocation(locations.upperRight),
+            lowerLeft: getRandomLocation(locations.lowerLeft),
+            lowerRight: getRandomLocation(locations.lowerRight)
         };
         this.reRoll = this.reRoll.bind(this);
         this.toggleKeepUL = this.toggleKeepUL.bind(this);
@@ -24,23 +24,23 @@ export default class App extends React.Component {
     }
     getLocations() {
         return {
-            upperLeft: this.state && this.state.keepUL ? this.state.upperLeft : getRandomLocation(locations.upperLeft),
-            upperRight: this.state && this.state.keepUR ? this.state.upperRight: getRandomLocation(locations.upperRight),
-            lowerLeft: this.state && this.state.keepLL ? this.state.lowerLeft: getRandomLocation(locations.lowerLeft),
-            lowerRight: this.state && this.state.keepLR ? this.state.lowerRight: getRandomLocation(locations.lowerRight)
+            upperLeft: this.state.upperLeft.keep  ? this.state.upperLeft : getRandomLocation(locations.upperLeft),
+            upperRight: this.state.upperRight.keep ? this.state.upperRight: getRandomLocation(locations.upperRight),
+            lowerLeft: this.state.lowerLeft.keep ? this.state.lowerLeft: getRandomLocation(locations.lowerLeft),
+            lowerRight: this.state.lowerRight.keep ? this.state.lowerRight: getRandomLocation(locations.lowerRight)
         };
     }
     toggleKeepUL () {
-        this.setState({keepUL: !this.state.keepUL});
+        this.setState({ upperLeft: { ...this.state.upperLeft, keep: !this.state.upperLeft.keep } });
     }
     toggleKeepUR () {
-        this.setState({keepUR: !this.state.keepUR});
+        this.setState({ upperRight: { ...this.state.upperRight, keep: !this.state.upperRight.keep } });
     }
     toggleKeepLL () {
-        this.setState({keepLL: !this.state.keepLL});
+        this.setState({ lowerLeft: { ...this.state.lowerLeft, keep: !this.state.lowerLeft.keep } });
     }
     toggleKeepLR () {
-        this.setState({keepLR: !this.state.keepLR});
+        this.setState({ lowerRight: { ...this.state.lowerRight, keep: !this.state.lowerRight.keep } });
     }
     reRoll () {
         this.setState(this.getLocations());
@@ -49,11 +49,12 @@ export default class App extends React.Component {
     return (
         <div style={{textAlign: "center"}}>
             <h1>Whitehall helper</h1>
-            <Location description="Upper left" location={this.state.upperLeft} keep={this.state.keepUL} onKeep={this.toggleKeepUL}/>
-            <Location description="Upper right" location={this.state.upperRight} keep={this.state.keepUR} onKeep={this.toggleKeepUR}/>
-            <Location description="Lower left" location={this.state.lowerLeft} keep={this.state.keepLL} onKeep={this.toggleKeepLL}/>
-            <Location description="Lower right" location={this.state.lowerRight} keep={this.state.keepLR} onKeep={this.toggleKeepLR}/>
+            <Location description="Upper left" location={this.state.upperLeft} onKeep={this.toggleKeepUL}/>
+            <Location description="Upper right" location={this.state.upperRight} onKeep={this.toggleKeepUR}/>
+            <Location description="Lower left" location={this.state.lowerLeft} onKeep={this.toggleKeepLL}/>
+            <Location description="Lower right" location={this.state.lowerRight} onKeep={this.toggleKeepLR}/>
             <div><button onClick={this.reRoll}>Reroll</button></div>
+            <Map positions={[this.state.upperLeft, this.state.upperRight, this.state.lowerLeft, this.state.lowerRight]}/>
         </div>
       );
     }

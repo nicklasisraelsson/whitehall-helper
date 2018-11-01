@@ -25,8 +25,8 @@ export default (props) => (
     <div style={containerStyle} onClick={props.onKeep}>
         <div><span>{props.description}</span></div>
         <div style={locationStyle}>
-            <span style={{color: props.keep ? "green" : "red"}}>{props.location}</span>
+            <span style={{color: props.location.keep ? "green" : "red"}}>{props.location.id}</span>
         </div>
-        <div>{props.keep ? "Reroll" : "Keep"}</div>
+        <div>{props.location.keep ? "Reroll" : "Keep"}</div>
     </div>
 )
