@@ -1,7 +1,14 @@
 import React from "react"
+import { Helmet } from "react-helmet"
+import IconButton from '@material/react-icon-button';
+import MaterialIcon from '@material/react-material-icon';
+import {Cell, Grid, Row} from '@material/react-layout-grid';
 import Location from "./Location";
 import locations from "../data/locations";
 import Map from "./Map";
+
+import '@material/react-layout-grid/dist/layout-grid.css';
+import '@material/react-icon-button/dist/icon-button.css';
 
 const getRandom = (max) => (Math.floor(Math.random() * Math.floor(max)))
 
@@ -47,14 +54,26 @@ export default class App extends React.Component {
     }
     render() {
     return (
-        <div style={{textAlign: "center"}}>
-            <h1>Whitehall helper</h1>
-            <Location description="Upper left" location={this.state.upperLeft} onKeep={this.toggleKeepUL}/>
-            <Location description="Upper right" location={this.state.upperRight} onKeep={this.toggleKeepUR}/>
-            <Location description="Lower left" location={this.state.lowerLeft} onKeep={this.toggleKeepLL}/>
-            <Location description="Lower right" location={this.state.lowerRight} onKeep={this.toggleKeepLR}/>
-            <div><button onClick={this.reRoll}>Reroll</button></div>
-            <Map positions={[this.state.upperLeft, this.state.upperRight, this.state.lowerLeft, this.state.lowerRight]}/>
+        <div>
+            <Helmet>
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+            </Helmet>
+            <Grid>
+                <Row>
+                    <Cell columns={1}><Location description="Upper left" location={this.state.upperLeft} onKeep={this.toggleKeepUL}/></Cell>
+                    <Cell columns={1}><Location description="Upper right" location={this.state.upperRight} onKeep={this.toggleKeepUR}/></Cell>
+                    <Cell columns={1}><Location description="Lower left" location={this.state.lowerLeft} onKeep={this.toggleKeepLL}/></Cell>
+                    <Cell columns={1}><Location description="Lower right" location={this.state.lowerRight} onKeep={this.toggleKeepLR}/></Cell>
+                    <Cell columns={1}>
+                        <IconButton onClick={this.reRoll}><MaterialIcon icon="refresh" /></IconButton>
+                    </Cell>
+                </Row>
+                <Row>
+                    <Cell>
+                        <Map positions={[this.state.upperLeft, this.state.upperRight, this.state.lowerLeft, this.state.lowerRight]}/>
+                    </Cell>
+                </Row>
+            </Grid>
         </div>
       );
     }

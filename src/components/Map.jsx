@@ -1,6 +1,10 @@
 import React from "react"
 import mapImage from "../data/whitehall-map.png";
 
+const maxWidth = 1024;
+const minWidth = 200;
+const totalPadding = 48;
+
 export default class Map extends React.Component {
 
     constructor(props) {
@@ -26,8 +30,9 @@ export default class Map extends React.Component {
 
     setScale() {
         let scale = 1;
-        if (window.innerWidth < 1024) {
-            scale = window.innerWidth / 1024;
+        const width = Math.min(document.documentElement.clientWidth, window.innerWidth || minWidth);
+        if (width < maxWidth) {
+            scale = (width-totalPadding) / maxWidth;
         }
         this.setState({scale});
     }
@@ -39,10 +44,10 @@ export default class Map extends React.Component {
     updateCanvas() {
         const ctx = this.refs.canvas.getContext("2d");
 
-        ctx.canvas.width = 1024*this.state.scale;
-        ctx.canvas.height = 1024*this.state.scale;
+        ctx.canvas.width = maxWidth*this.state.scale;
+        ctx.canvas.height = maxWidth*this.state.scale;
         ctx.globalAlpha = 1;
-        ctx.drawImage(this.state.image, 0, 0, 1024*this.state.scale, 1024*this.state.scale);
+        ctx.drawImage(this.state.image, 0, 0, maxWidth*this.state.scale, maxWidth*this.state.scale);
         ctx.globalAlpha = 0.5;
         this.props.positions.forEach(position => {
             this.drawPosition(ctx, position);
@@ -58,9 +63,7 @@ export default class Map extends React.Component {
 
     render() {
         return  (
-            <div style={{paddingTop: "20px"}}>
-                <canvas ref="canvas" width="1024px" height="1024px" />
-            </div>
+            <canvas ref="canvas" width={maxWidth} height={maxWidth} />
         )
     }
 }

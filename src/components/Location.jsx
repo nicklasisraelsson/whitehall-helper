@@ -1,32 +1,12 @@
 import React from "react"
-
-const locationStyle = {
-    border: "1px black solid",
-    fontSize: "2em",
-    borderRadius: "50%",
-    height: "100px",
-    width: "100px",
-    padding: "10px",
-    margin: "10px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center"
-};
-
-const containerStyle = {
-    cursor: "pointer",
-    display: "inline-block",
-    textAlign: "center",
-    width: "130px"
-}
-
+import Button from '@material/react-button';
 
 export default (props) => (
-    <div style={containerStyle} onClick={props.onKeep}>
-        <div><span>{props.description}</span></div>
-        <div style={locationStyle}>
-            <span style={{color: props.location.keep ? "green" : "red"}}>{props.location.id}</span>
-        </div>
-        <div>{props.location.keep ? "Reroll" : "Keep"}</div>
-    </div>
+    <Button
+        unelevated={props.location.keep}
+        outlined={!props.location.keep}
+
+        onClick={props.onKeep}>
+        {props.location.id}
+    </Button>
 )
