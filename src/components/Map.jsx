@@ -1,70 +1,65 @@
-import React from "react"
+import React, { useState, useEffect, useRef } from "react"
 import mapImage from "../data/whitehall-map.png";
 
 const maxWidth = 1024;
 const minWidth = 200;
 const totalPadding = 48;
 
-export default class Map extends React.Component {
+const Map = ({positions}) => {
+    const [image, setImage] = useState(null);
+    const [scale, setScale] = useState(1);
+    const canvas = useRef(null);
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            image: null,
-            scale: 1
-        };
-        this.canvas = React.createRef();
-    }
-
-    componentDidMount() {
-        const image = new Image();
-        this.setState({image});
-        image.onload = () => {
-            this.updateCanvas();
-        }
-        image.src = mapImage;
-        this.setScale();
-        window.addEventListener("resize", () => {
-            this.setScale();
-        });
-    }
-
-    setScale() {
-        let scale = 1;
+    const updateScale = () => {
+        let newScale = 1;
         const width = Math.min(document.documentElement.clientWidth, window.innerWidth || minWidth);
         if (width < maxWidth) {
-            scale = (width-totalPadding) / maxWidth;
+            newScale = (width-totalPadding) / maxWidth;
         }
-        this.setState({scale});
-    }
+        setScale(newScale);
+    };
 
-    componentDidUpdate() {
-        this.updateCanvas();
-    }
-
-    updateCanvas() {
-        const ctx = this.canvas.current.getContext("2d");
-
-        ctx.canvas.width = maxWidth*this.state.scale;
-        ctx.canvas.height = maxWidth*this.state.scale;
-        ctx.globalAlpha = 1;
-        ctx.drawImage(this.state.image, 0, 0, maxWidth*this.state.scale, maxWidth*this.state.scale);
-        ctx.globalAlpha = 0.5;
-        this.props.positions.forEach(position => {
-            this.drawPosition(ctx, position);
-        });
-    }
-
-    drawPosition(ctx, position) {
+    const drawPosition = (ctx, position) => {
         ctx.beginPath();
-        ctx.arc(position.x*this.state.scale, position.y*this.state.scale, 15*this.state.scale, 0, Math.PI * 2, true);
+        ctx.arc(position.x*scale, position.y*scale, 15*scale, 0, Math.PI * 2, true);
         ctx.fillStyle = position.keep ? "green" : "red";
         ctx.fill();
-    }
+    };
 
-    render() {
-        return  (
-            <canvas ref={this.canvas} width={maxWidth} height={maxWidth} />
-        )
-    }
-}
+    const updateCanvas = () => {
+        if (!canvas || !image) return;
+
+        const ctx = canvas.current.getContext("2d");
+
+        ctx.canvas.width = maxWidth*scale;
+        ctx.canvas.height = maxWidth*scale;
+        ctx.globalAlpha = 1;
+        ctx.drawImage(image, 0, 0, maxWidth*scale, maxWidth*scale);
+        ctx.globalAlpha = 0.5;
+        positions.forEach(position => {
+            drawPosition(ctx, position);
+        });
+    };
+
+    useEffect(() => {
+        const newImage = new Image();
+        newImage.src = mapImage;
+        newImage.onload = () => {
+            setImage(newImage);
+        };
+        updateScale();
+        window.addEventListener("resize", () => {
+            updateScale();
+        });
+    }, []);
+
+    useEffect(() => {
+        updateCanvas();
+    });
+
+    return  (
+        <canvas ref={canvas} width={maxWidth} height={maxWidth} />
+    );
+};
+
+export default Map;
