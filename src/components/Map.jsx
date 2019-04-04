@@ -13,6 +13,7 @@ export default class Map extends React.Component {
             image: null,
             scale: 1
         };
+        this.canvas = React.createRef();
     }
 
     componentDidMount() {
@@ -42,7 +43,7 @@ export default class Map extends React.Component {
     }
 
     updateCanvas() {
-        const ctx = this.refs.canvas.getContext("2d");
+        const ctx = this.canvas.current.getContext("2d");
 
         ctx.canvas.width = maxWidth*this.state.scale;
         ctx.canvas.height = maxWidth*this.state.scale;
@@ -63,7 +64,7 @@ export default class Map extends React.Component {
 
     render() {
         return  (
-            <canvas ref="canvas" width={maxWidth} height={maxWidth} />
+            <canvas ref={this.canvas} width={maxWidth} height={maxWidth} />
         )
     }
 }

@@ -7,9 +7,9 @@ import Location from "./Location";
 import locations from "../data/locations";
 import Map from "./Map";
 
-import '@material/react-layout-grid/dist/layout-grid.css';
-import '@material/react-icon-button/dist/icon-button.css';
-import '@material/react-button/dist/button.css';
+import "@material/react-layout-grid/dist/layout-grid.css";
+import "@material/react-icon-button/dist/icon-button.css";
+import "@material/react-button/dist/button.css";
 
 const getRandom = (max) => (Math.floor(Math.random() * Math.floor(max)))
 
@@ -54,34 +54,34 @@ export default class App extends React.Component {
         this.setState(this.getLocations());
     }
     render() {
-    return (
-        <div>
-            <Helmet>
-                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-            </Helmet>
-            <Grid>
-                <Row>
-                    <Cell columns={1} align={"middle"}><Location description="Upper left" location={this.state.upperLeft} onKeep={this.toggleKeepUL}/></Cell>
-                    <Cell columns={1} align={"middle"}><Location description="Upper right" location={this.state.upperRight} onKeep={this.toggleKeepUR}/></Cell>
-                    <Cell columns={1} align={"middle"}><Location description="Lower left" location={this.state.lowerLeft} onKeep={this.toggleKeepLL}/></Cell>
-                    <Cell columns={1} align={"middle"}><Location description="Lower right" location={this.state.lowerRight} onKeep={this.toggleKeepLR}/></Cell>
-                    <Cell columns={1} align={"middle"}>
-                        <IconButton onClick={this.reRoll}><MaterialIcon icon="refresh" /></IconButton>
-                    </Cell>
-                </Row>
-                <Row>
-                    <Cell align={"middle"}>
+        return (
+            <div>
+                <Helmet>
+                    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+                </Helmet>
+                <Grid>
+                    <Row>
+                        <Cell columns={1} align={"middle"}><Location description="Upper left" location={this.state.upperLeft} onKeep={this.toggleKeepUL}/></Cell>
+                        <Cell columns={1} align={"middle"}><Location description="Upper right" location={this.state.upperRight} onKeep={this.toggleKeepUR}/></Cell>
+                        <Cell columns={1} align={"middle"}><Location description="Lower left" location={this.state.lowerLeft} onKeep={this.toggleKeepLL}/></Cell>
+                        <Cell columns={1} align={"middle"}><Location description="Lower right" location={this.state.lowerRight} onKeep={this.toggleKeepLR}/></Cell>
+                        <Cell columns={1} align={"middle"}>
+                            <IconButton onClick={this.reRoll}><MaterialIcon icon="refresh" /></IconButton>
+                        </Cell>
+                    </Row>
+                    <Row>
+                        <Cell align={"middle"}>
                         &nbsp;
-                    </Cell>
-                </Row>
-                <Row>
-                    <Cell columns={12}>
-                        <Map positions={[this.state.upperLeft, this.state.upperRight, this.state.lowerLeft, this.state.lowerRight]}/>
-                    </Cell>
-                </Row>
-            </Grid>
-        </div>
-      );
+                        </Cell>
+                    </Row>
+                    <Row>
+                        <Cell columns={12}>
+                            <Map positions={[this.state.upperLeft, this.state.upperRight, this.state.lowerLeft, this.state.lowerRight]}/>
+                        </Cell>
+                    </Row>
+                </Grid>
+            </div>
+        );
     }
 }
 

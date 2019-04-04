@@ -1,5 +1,5 @@
 import React from "react"
-import Button from '@material/react-button';
+import Button from "@material/react-button";
 
 export default (props) => (
     <Button

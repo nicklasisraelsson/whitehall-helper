@@ -6,7 +6,8 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "lint": "eslint --ext .jsx,.js ."
   },
   "dependencies": {
     "@material/react-button": "^0.11.0",
@@ -23,6 +24,9 @@
     "typography": "^0.16.17"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-react": "^7.12.4",
     "gh-pages": "^2.0.1"
   },
   "version": "0.2.0"
