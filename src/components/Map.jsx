@@ -18,6 +18,22 @@ const Map = ({positions, onLocationSelect}) => {
     const [scale, setScale] = useState(1);
     const canvas = useRef(null);
 
+    useEffect(() => {
+        const newImage = new Image();
+        newImage.src = mapImage;
+        newImage.onload = () => {
+            setImage(newImage);
+        };
+        updateScale();
+        window.addEventListener("resize", () => {
+            updateScale();
+        });
+    }, []);
+
+    useEffect(() => {
+        updateCanvas();
+    });
+
     const updateScale = () => {
         let newScale = 1;
         const width = Math.min(document.documentElement.clientWidth, window.innerWidth || minWidth);
@@ -48,22 +64,6 @@ const Map = ({positions, onLocationSelect}) => {
             drawPosition(ctx, position);
         });
     };
-
-    useEffect(() => {
-        const newImage = new Image();
-        newImage.src = mapImage;
-        newImage.onload = () => {
-            setImage(newImage);
-        };
-        updateScale();
-        window.addEventListener("resize", () => {
-            updateScale();
-        });
-    }, []);
-
-    useEffect(() => {
-        updateCanvas();
-    });
 
     const handleSelection = event => {
         const cursorLocation = getCursorLocation(event)
