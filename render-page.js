@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("@reach/router"), require("core-js/modules/es6.array.fill"), require("core-js/modules/es6.array.iterator"), require("core-js/modules/es6.array.sort"), require("core-js/modules/es6.function.name"), require("core-js/modules/es6.map"), require("core-js/modules/es6.object.assign"), require("core-js/modules/es6.object.to-string"), require("core-js/modules/es6.regexp.constructor"), require("core-js/modules/es6.regexp.split"), require("core-js/modules/es6.regexp.to-string"), require("core-js/modules/es6.string.ends-with"), require("core-js/modules/es6.string.iterator"), require("core-js/modules/web.dom.iterable"), require("fs"), require("lodash"), require("path"), require("react"), require("react-dom/server"), require("react-helmet"));
+		module.exports = factory(require("@reach/router"), require("core-js/modules/es6.array.fill"), require("core-js/modules/es6.array.find"), require("core-js/modules/es6.array.iterator"), require("core-js/modules/es6.array.sort"), require("core-js/modules/es6.function.name"), require("core-js/modules/es6.map"), require("core-js/modules/es6.object.assign"), require("core-js/modules/es6.object.to-string"), require("core-js/modules/es6.regexp.constructor"), require("core-js/modules/es6.regexp.split"), require("core-js/modules/es6.regexp.to-string"), require("core-js/modules/es6.string.ends-with"), require("core-js/modules/es6.string.iterator"), require("core-js/modules/web.dom.iterable"), require("fs"), require("lodash"), require("path"), require("react"), require("react-dom/server"), require("react-helmet"));
 	else if(typeof define === 'function' && define.amd)
-		define("lib", ["@reach/router", "core-js/modules/es6.array.fill", "core-js/modules/es6.array.iterator", "core-js/modules/es6.array.sort", "core-js/modules/es6.function.name", "core-js/modules/es6.map", "core-js/modules/es6.object.assign", "core-js/modules/es6.object.to-string", "core-js/modules/es6.regexp.constructor", "core-js/modules/es6.regexp.split", "core-js/modules/es6.regexp.to-string", "core-js/modules/es6.string.ends-with", "core-js/modules/es6.string.iterator", "core-js/modules/web.dom.iterable", "fs", "lodash", "path", "react", "react-dom/server", "react-helmet"], factory);
+		define("lib", ["@reach/router", "core-js/modules/es6.array.fill", "core-js/modules/es6.array.find", "core-js/modules/es6.array.iterator", "core-js/modules/es6.array.sort", "core-js/modules/es6.function.name", "core-js/modules/es6.map", "core-js/modules/es6.object.assign", "core-js/modules/es6.object.to-string", "core-js/modules/es6.regexp.constructor", "core-js/modules/es6.regexp.split", "core-js/modules/es6.regexp.to-string", "core-js/modules/es6.string.ends-with", "core-js/modules/es6.string.iterator", "core-js/modules/web.dom.iterable", "fs", "lodash", "path", "react", "react-dom/server", "react-helmet"], factory);
 	else if(typeof exports === 'object')
-		exports["lib"] = factory(require("@reach/router"), require("core-js/modules/es6.array.fill"), require("core-js/modules/es6.array.iterator"), require("core-js/modules/es6.array.sort"), require("core-js/modules/es6.function.name"), require("core-js/modules/es6.map"), require("core-js/modules/es6.object.assign"), require("core-js/modules/es6.object.to-string"), require("core-js/modules/es6.regexp.constructor"), require("core-js/modules/es6.regexp.split"), require("core-js/modules/es6.regexp.to-string"), require("core-js/modules/es6.string.ends-with"), require("core-js/modules/es6.string.iterator"), require("core-js/modules/web.dom.iterable"), require("fs"), require("lodash"), require("path"), require("react"), require("react-dom/server"), require("react-helmet"));
+		exports["lib"] = factory(require("@reach/router"), require("core-js/modules/es6.array.fill"), require("core-js/modules/es6.array.find"), require("core-js/modules/es6.array.iterator"), require("core-js/modules/es6.array.sort"), require("core-js/modules/es6.function.name"), require("core-js/modules/es6.map"), require("core-js/modules/es6.object.assign"), require("core-js/modules/es6.object.to-string"), require("core-js/modules/es6.regexp.constructor"), require("core-js/modules/es6.regexp.split"), require("core-js/modules/es6.regexp.to-string"), require("core-js/modules/es6.string.ends-with"), require("core-js/modules/es6.string.iterator"), require("core-js/modules/web.dom.iterable"), require("fs"), require("lodash"), require("path"), require("react"), require("react-dom/server"), require("react-helmet"));
 	else
-		root["lib"] = factory(root["@reach/router"], root["core-js/modules/es6.array.fill"], root["core-js/modules/es6.array.iterator"], root["core-js/modules/es6.array.sort"], root["core-js/modules/es6.function.name"], root["core-js/modules/es6.map"], root["core-js/modules/es6.object.assign"], root["core-js/modules/es6.object.to-string"], root["core-js/modules/es6.regexp.constructor"], root["core-js/modules/es6.regexp.split"], root["core-js/modules/es6.regexp.to-string"], root["core-js/modules/es6.string.ends-with"], root["core-js/modules/es6.string.iterator"], root["core-js/modules/web.dom.iterable"], root["fs"], root["lodash"], root["path"], root["react"], root["react-dom/server"], root["react-helmet"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE__reach_router__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_array_fill__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_array_iterator__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_array_sort__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_function_name__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_map__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_object_assign__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_object_to_string__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_regexp_constructor__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_regexp_split__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_regexp_to_string__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_string_ends_with__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_string_iterator__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_web_dom_iterable__, __WEBPACK_EXTERNAL_MODULE_fs__, __WEBPACK_EXTERNAL_MODULE_lodash__, __WEBPACK_EXTERNAL_MODULE_path__, __WEBPACK_EXTERNAL_MODULE_react__, __WEBPACK_EXTERNAL_MODULE_react_dom_server__, __WEBPACK_EXTERNAL_MODULE_react_helmet__) {
+		root["lib"] = factory(root["@reach/router"], root["core-js/modules/es6.array.fill"], root["core-js/modules/es6.array.find"], root["core-js/modules/es6.array.iterator"], root["core-js/modules/es6.array.sort"], root["core-js/modules/es6.function.name"], root["core-js/modules/es6.map"], root["core-js/modules/es6.object.assign"], root["core-js/modules/es6.object.to-string"], root["core-js/modules/es6.regexp.constructor"], root["core-js/modules/es6.regexp.split"], root["core-js/modules/es6.regexp.to-string"], root["core-js/modules/es6.string.ends-with"], root["core-js/modules/es6.string.iterator"], root["core-js/modules/web.dom.iterable"], root["fs"], root["lodash"], root["path"], root["react"], root["react-dom/server"], root["react-helmet"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE__reach_router__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_array_fill__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_array_find__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_array_iterator__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_array_sort__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_function_name__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_map__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_object_assign__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_object_to_string__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_regexp_constructor__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_regexp_split__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_regexp_to_string__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_string_ends_with__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_string_iterator__, __WEBPACK_EXTERNAL_MODULE_core_js_modules_web_dom_iterable__, __WEBPACK_EXTERNAL_MODULE_fs__, __WEBPACK_EXTERNAL_MODULE_lodash__, __WEBPACK_EXTERNAL_MODULE_path__, __WEBPACK_EXTERNAL_MODULE_react__, __WEBPACK_EXTERNAL_MODULE_react_dom_server__, __WEBPACK_EXTERNAL_MODULE_react_helmet__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -6914,6 +6914,49 @@ var App = function App() {
     }));
   };
 
+  var onLocationSelected = function onLocationSelected(location) {
+    switch (location.corner) {
+      case "upperLeft":
+        if (location.id == upperLeft.id) {
+          toggleKeepUL();
+        } else {
+          setUpperLeft(location);
+        }
+
+        break;
+
+      case "upperRight":
+        if (location.id == upperRight.id) {
+          toggleKeepUR();
+        } else {
+          setUpperRight(location);
+        }
+
+        break;
+
+      case "lowerLeft":
+        if (location.id == lowerLeft.id) {
+          toggleKeepLL();
+        } else {
+          setLowerLeft(location);
+        }
+
+        break;
+
+      case "lowerRight":
+        if (location.id == lowerRight.id) {
+          toggleKeepLR();
+        } else {
+          setLowerRight(location);
+        }
+
+        break;
+
+      default:
+        break;
+    }
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_2__["Helmet"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
     href: "https://fonts.googleapis.com/icon?family=Material+Icons",
     rel: "stylesheet"
@@ -6957,7 +7000,8 @@ var App = function App() {
   }, "\xA0")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_5__["Row"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_5__["Cell"], {
     columns: 12
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Map__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    positions: [upperLeft, upperRight, lowerLeft, lowerRight]
+    positions: [upperLeft, upperRight, lowerLeft, lowerRight],
+    onLocationSelect: onLocationSelected
   })))));
 };
 
@@ -6999,31 +7043,58 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es6_array_fill__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es6.array.fill */ "core-js/modules/es6.array.fill");
-/* harmony import */ var core_js_modules_es6_array_fill__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_array_fill__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _data_whitehall_map_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/whitehall-map.png */ "./src/data/whitehall-map.png");
-/* harmony import */ var _data_whitehall_map_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_data_whitehall_map_png__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es6_array_find__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es6.array.find */ "core-js/modules/es6.array.find");
+/* harmony import */ var core_js_modules_es6_array_find__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_array_find__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es6_array_fill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es6.array.fill */ "core-js/modules/es6.array.fill");
+/* harmony import */ var core_js_modules_es6_array_fill__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_array_fill__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es6_object_assign__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es6.object.assign */ "core-js/modules/es6.object.assign");
+/* harmony import */ var core_js_modules_es6_object_assign__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_object_assign__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _data_locations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../data/locations */ "./src/data/locations.js");
+/* harmony import */ var _data_whitehall_map_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../data/whitehall-map.png */ "./src/data/whitehall-map.png");
+/* harmony import */ var _data_whitehall_map_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_data_whitehall_map_png__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
 
 
 
 var maxWidth = 1024;
 var minWidth = 200;
 var totalPadding = 48;
+var positionRadius = 15;
+var allLocations = [].concat(_data_locations__WEBPACK_IMPORTED_MODULE_4__["default"].upperLeft.map(function (location) {
+  return Object.assign({}, location, {
+    corner: "upperLeft"
+  });
+}), _data_locations__WEBPACK_IMPORTED_MODULE_4__["default"].upperRight.map(function (location) {
+  return Object.assign({}, location, {
+    corner: "upperRight"
+  });
+}), _data_locations__WEBPACK_IMPORTED_MODULE_4__["default"].lowerLeft.map(function (location) {
+  return Object.assign({}, location, {
+    corner: "lowerLeft"
+  });
+}), _data_locations__WEBPACK_IMPORTED_MODULE_4__["default"].lowerRight.map(function (location) {
+  return Object.assign({}, location, {
+    corner: "lowerRight"
+  });
+}));
 
 var Map = function Map(_ref) {
-  var positions = _ref.positions;
+  var positions = _ref.positions,
+      onLocationSelect = _ref.onLocationSelect;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(null),
       image = _useState[0],
       setImage = _useState[1];
 
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(1),
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(1),
       scale = _useState2[0],
       setScale = _useState2[1];
 
-  var canvas = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(null);
+  var canvas = Object(react__WEBPACK_IMPORTED_MODULE_3__["useRef"])(null);
 
   var updateScale = function updateScale() {
     var newScale = 1;
@@ -7038,7 +7109,7 @@ var Map = function Map(_ref) {
 
   var drawPosition = function drawPosition(ctx, position) {
     ctx.beginPath();
-    ctx.arc(position.x * scale, position.y * scale, 15 * scale, 0, Math.PI * 2, true);
+    ctx.arc(position.x * scale, position.y * scale, positionRadius * scale, 0, Math.PI * 2, true);
     ctx.fillStyle = position.keep ? "green" : "red";
     ctx.fill();
   };
@@ -7056,9 +7127,9 @@ var Map = function Map(_ref) {
     });
   };
 
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+  Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
     var newImage = new Image();
-    newImage.src = _data_whitehall_map_png__WEBPACK_IMPORTED_MODULE_2___default.a;
+    newImage.src = _data_whitehall_map_png__WEBPACK_IMPORTED_MODULE_5___default.a;
 
     newImage.onload = function () {
       setImage(newImage);
@@ -7069,13 +7140,38 @@ var Map = function Map(_ref) {
       updateScale();
     });
   }, []);
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+  Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
     updateCanvas();
   });
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("canvas", {
+
+  var handleSelection = function handleSelection(event) {
+    var cursorLocation = getCursorLocation(event);
+    var clickedLocation = allLocations.find(function (location) {
+      return isLocationClicked(cursorLocation, location);
+    });
+
+    if (clickedLocation) {
+      onLocationSelect(clickedLocation);
+    }
+  };
+
+  var getCursorLocation = function getCursorLocation(event) {
+    var canvasRect = canvas.current.getBoundingClientRect();
+    return {
+      x: Math.floor((event.clientX - canvasRect.left) / scale),
+      y: Math.floor((event.clientY - canvasRect.top) / scale)
+    };
+  };
+
+  var isLocationClicked = function isLocationClicked(clickedPosition, location) {
+    return Math.sqrt(Math.pow(clickedPosition.x - location.x, 2) + Math.pow(clickedPosition.y - location.y, 2)) < positionRadius;
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("canvas", {
     ref: canvas,
     width: maxWidth,
-    height: maxWidth
+    height: maxWidth,
+    onClick: handleSelection
   });
 };
 
@@ -7571,6 +7667,17 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__reach_router__;
 /***/ (function(module, exports) {
 
 module.exports = __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_array_fill__;
+
+/***/ }),
+
+/***/ "core-js/modules/es6.array.find":
+/*!*************************************************!*\
+  !*** external "core-js/modules/es6.array.find" ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_core_js_modules_es6_array_find__;
 
 /***/ }),
 
