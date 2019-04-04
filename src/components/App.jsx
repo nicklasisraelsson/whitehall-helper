@@ -44,6 +44,41 @@ const App = () => {
         setLowerRight({...lowerRight, keep: !lowerRight.keep});
     }
 
+    const onLocationSelected = (location) => {
+        switch (location.corner) {
+            case "upperLeft":
+                if(location.id == upperLeft.id) {
+                    toggleKeepUL();
+                } else {
+                    setUpperLeft(location);
+                }
+                break;
+            case "upperRight":
+                if(location.id == upperRight.id) {
+                    toggleKeepUR();
+                } else {
+                    setUpperRight(location);
+                }
+                break;
+            case "lowerLeft":
+                if(location.id == lowerLeft.id) {
+                    toggleKeepLL();
+                } else {
+                    setLowerLeft(location);
+                }
+                break;
+            case "lowerRight":
+                if(location.id == lowerRight.id) {
+                    toggleKeepLR();
+                } else {
+                    setLowerRight(location);
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
     return (
         <div>
             <Helmet>
@@ -66,7 +101,7 @@ const App = () => {
                 </Row>
                 <Row>
                     <Cell columns={12}>
-                        <Map positions={[upperLeft, upperRight, lowerLeft, lowerRight]}/>
+                        <Map positions={[upperLeft, upperRight, lowerLeft, lowerRight]} onLocationSelect={onLocationSelected}/>
                     </Cell>
                 </Row>
             </Grid>

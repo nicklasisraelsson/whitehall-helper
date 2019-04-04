@@ -1,11 +1,19 @@
 import React, { useState, useEffect, useRef } from "react"
+import locations from "../data/locations";
 import mapImage from "../data/whitehall-map.png";
 
 const maxWidth = 1024;
 const minWidth = 200;
 const totalPadding = 48;
+const positionRadius = 15;
+const allLocations = [
+    ...locations.upperLeft.map(location => ({ ...location, corner: "upperLeft" })),
+    ...locations.upperRight.map(location => ({ ...location, corner: "upperRight" })),
+    ...locations.lowerLeft.map(location => ({ ...location, corner: "lowerLeft" })),
+    ...locations.lowerRight.map(location => ({ ...location, corner: "lowerRight" }))
+];
 
-const Map = ({positions}) => {
+const Map = ({positions, onLocationSelect}) => {
     const [image, setImage] = useState(null);
     const [scale, setScale] = useState(1);
     const canvas = useRef(null);
@@ -21,7 +29,7 @@ const Map = ({positions}) => {
 
     const drawPosition = (ctx, position) => {
         ctx.beginPath();
-        ctx.arc(position.x*scale, position.y*scale, 15*scale, 0, Math.PI * 2, true);
+        ctx.arc(position.x*scale, position.y*scale, positionRadius*scale, 0, Math.PI * 2, true);
         ctx.fillStyle = position.keep ? "green" : "red";
         ctx.fill();
     };
@@ -57,8 +65,36 @@ const Map = ({positions}) => {
         updateCanvas();
     });
 
+    const handleSelection = event => {
+        const cursorLocation = getCursorLocation(event)
+
+        const clickedLocation = allLocations.find(location => {
+            return isLocationClicked(cursorLocation, location)
+        })
+
+        if (clickedLocation) {
+            onLocationSelect(clickedLocation);
+        }
+    };
+
+    const getCursorLocation = event => {
+        const canvasRect = canvas.current.getBoundingClientRect();
+        return {
+            x: Math.floor((event.clientX - canvasRect.left)/scale),
+            y: Math.floor((event.clientY - canvasRect.top)/scale)
+        };
+    }
+
+    const isLocationClicked = (clickedPosition, location) => {
+        return Math.sqrt((clickedPosition.x-location.x) ** 2 + (clickedPosition.y - location.y) ** 2) < positionRadius;
+    };
+
     return  (
-        <canvas ref={canvas} width={maxWidth} height={maxWidth} />
+        <canvas
+            ref={canvas}
+            width={maxWidth}
+            height={maxWidth}
+            onClick={handleSelection} />
     );
 };
 
