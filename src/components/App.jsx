@@ -1,8 +1,8 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import IconButton from '@material/react-icon-button';
-import MaterialIcon from '@material/react-material-icon';
-import {Cell, Grid, Row} from '@material/react-layout-grid';
+import IconButton from "@material/react-icon-button";
+import MaterialIcon from "@material/react-material-icon";
+import {Cell, Grid, Row} from "@material/react-layout-grid";
 import Location from "./Location";
 import locations from "../data/locations";
 import Map from "./Map";
@@ -61,12 +61,17 @@ export default class App extends React.Component {
             </Helmet>
             <Grid>
                 <Row>
-                    <Cell columns={1}><Location description="Upper left" location={this.state.upperLeft} onKeep={this.toggleKeepUL}/></Cell>
-                    <Cell columns={1}><Location description="Upper right" location={this.state.upperRight} onKeep={this.toggleKeepUR}/></Cell>
-                    <Cell columns={1}><Location description="Lower left" location={this.state.lowerLeft} onKeep={this.toggleKeepLL}/></Cell>
-                    <Cell columns={1}><Location description="Lower right" location={this.state.lowerRight} onKeep={this.toggleKeepLR}/></Cell>
-                    <Cell columns={1}>
+                    <Cell columns={1} align={"middle"}><Location description="Upper left" location={this.state.upperLeft} onKeep={this.toggleKeepUL}/></Cell>
+                    <Cell columns={1} align={"middle"}><Location description="Upper right" location={this.state.upperRight} onKeep={this.toggleKeepUR}/></Cell>
+                    <Cell columns={1} align={"middle"}><Location description="Lower left" location={this.state.lowerLeft} onKeep={this.toggleKeepLL}/></Cell>
+                    <Cell columns={1} align={"middle"}><Location description="Lower right" location={this.state.lowerRight} onKeep={this.toggleKeepLR}/></Cell>
+                    <Cell columns={1} align={"middle"}>
                         <IconButton onClick={this.reRoll}><MaterialIcon icon="refresh" /></IconButton>
+                    </Cell>
+                </Row>
+                <Row>
+                    <Cell align={"middle"}>
+                        &nbsp;
                     </Cell>
                 </Row>
                 <Row>
