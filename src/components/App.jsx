@@ -9,6 +9,7 @@ import Map from "./Map";
 
 import '@material/react-layout-grid/dist/layout-grid.css';
 import '@material/react-icon-button/dist/icon-button.css';
+import '@material/react-button/dist/button.css';
 
 const getRandom = (max) => (Math.floor(Math.random() * Math.floor(max)))
 
@@ -69,7 +70,7 @@ export default class App extends React.Component {
                     </Cell>
                 </Row>
                 <Row>
-                    <Cell>
+                    <Cell columns={12}>
                         <Map positions={[this.state.upperLeft, this.state.upperRight, this.state.lowerLeft, this.state.lowerRight]}/>
                     </Cell>
                 </Row>
