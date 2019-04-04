@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Helmet } from "react-helmet"
 import IconButton from "@material/react-icon-button";
 import MaterialIcon from "@material/react-material-icon";
@@ -15,73 +15,63 @@ const getRandom = (max) => (Math.floor(Math.random() * Math.floor(max)))
 
 const getRandomLocation = (possibleLocations) => (possibleLocations[getRandom(possibleLocations.length)])
 
-export default class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            upperLeft: getRandomLocation(locations.upperLeft),
-            upperRight: getRandomLocation(locations.upperRight),
-            lowerLeft: getRandomLocation(locations.lowerLeft),
-            lowerRight: getRandomLocation(locations.lowerRight)
-        };
-        this.reRoll = this.reRoll.bind(this);
-        this.toggleKeepUL = this.toggleKeepUL.bind(this);
-        this.toggleKeepUR = this.toggleKeepUR.bind(this);
-        this.toggleKeepLL = this.toggleKeepLL.bind(this);
-        this.toggleKeepLR = this.toggleKeepLR.bind(this);
-    }
-    getLocations() {
-        return {
-            upperLeft: this.state.upperLeft.keep  ? this.state.upperLeft : getRandomLocation(locations.upperLeft),
-            upperRight: this.state.upperRight.keep ? this.state.upperRight: getRandomLocation(locations.upperRight),
-            lowerLeft: this.state.lowerLeft.keep ? this.state.lowerLeft: getRandomLocation(locations.lowerLeft),
-            lowerRight: this.state.lowerRight.keep ? this.state.lowerRight: getRandomLocation(locations.lowerRight)
-        };
-    }
-    toggleKeepUL () {
-        this.setState({ upperLeft: { ...this.state.upperLeft, keep: !this.state.upperLeft.keep } });
-    }
-    toggleKeepUR () {
-        this.setState({ upperRight: { ...this.state.upperRight, keep: !this.state.upperRight.keep } });
-    }
-    toggleKeepLL () {
-        this.setState({ lowerLeft: { ...this.state.lowerLeft, keep: !this.state.lowerLeft.keep } });
-    }
-    toggleKeepLR () {
-        this.setState({ lowerRight: { ...this.state.lowerRight, keep: !this.state.lowerRight.keep } });
-    }
-    reRoll () {
-        this.setState(this.getLocations());
-    }
-    render() {
-        return (
-            <div>
-                <Helmet>
-                    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-                </Helmet>
-                <Grid>
-                    <Row>
-                        <Cell columns={1} align={"middle"}><Location description="Upper left" location={this.state.upperLeft} onKeep={this.toggleKeepUL}/></Cell>
-                        <Cell columns={1} align={"middle"}><Location description="Upper right" location={this.state.upperRight} onKeep={this.toggleKeepUR}/></Cell>
-                        <Cell columns={1} align={"middle"}><Location description="Lower left" location={this.state.lowerLeft} onKeep={this.toggleKeepLL}/></Cell>
-                        <Cell columns={1} align={"middle"}><Location description="Lower right" location={this.state.lowerRight} onKeep={this.toggleKeepLR}/></Cell>
-                        <Cell columns={1} align={"middle"}>
-                            <IconButton onClick={this.reRoll}><MaterialIcon icon="refresh" /></IconButton>
-                        </Cell>
-                    </Row>
-                    <Row>
-                        <Cell align={"middle"}>
-                        &nbsp;
-                        </Cell>
-                    </Row>
-                    <Row>
-                        <Cell columns={12}>
-                            <Map positions={[this.state.upperLeft, this.state.upperRight, this.state.lowerLeft, this.state.lowerRight]}/>
-                        </Cell>
-                    </Row>
-                </Grid>
-            </div>
-        );
-    }
-}
+const App = () => {
+    const [upperLeft, setUpperLeft] = useState(getRandomLocation(locations.upperLeft));
+    const [upperRight, setUpperRight] = useState(getRandomLocation(locations.upperRight));
+    const [lowerLeft, setLowerLeft] = useState(getRandomLocation(locations.lowerLeft));
+    const [lowerRight, setLowerRight] = useState(getRandomLocation(locations.lowerRight));
 
+    const reRoll = () => {
+        setUpperLeft(upperLeft.keep  ? upperLeft : getRandomLocation(locations.upperLeft));
+        setUpperRight(upperRight.keep ? upperRight: getRandomLocation(locations.upperRight));
+        setLowerLeft(lowerLeft.keep ? lowerLeft: getRandomLocation(locations.lowerLeft));
+        setLowerRight(lowerRight.keep ? lowerRight: getRandomLocation(locations.lowerRight));
+    }
+
+    const toggleKeepUL = () => {
+        setUpperLeft({...upperLeft, keep: !upperLeft.keep});
+    }
+
+    const toggleKeepUR = () => {
+        setUpperRight({...upperRight, keep: !upperRight.keep});
+    }
+
+    const toggleKeepLL = () => {
+        setLowerLeft({...lowerLeft, keep: !lowerLeft.keep});
+    }
+
+    const toggleKeepLR = () => {
+        setLowerRight({...lowerRight, keep: !lowerRight.keep});
+    }
+
+    return (
+        <div>
+            <Helmet>
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+            </Helmet>
+            <Grid>
+                <Row>
+                    <Cell columns={1} align={"middle"}><Location description="Upper left" location={upperLeft} onKeep={toggleKeepUL}/></Cell>
+                    <Cell columns={1} align={"middle"}><Location description="Upper right" location={upperRight} onKeep={toggleKeepUR}/></Cell>
+                    <Cell columns={1} align={"middle"}><Location description="Lower left" location={lowerLeft} onKeep={toggleKeepLL}/></Cell>
+                    <Cell columns={1} align={"middle"}><Location description="Lower right" location={lowerRight} onKeep={toggleKeepLR}/></Cell>
+                    <Cell columns={1} align={"middle"}>
+                        <IconButton onClick={reRoll}><MaterialIcon icon="refresh" /></IconButton>
+                    </Cell>
+                </Row>
+                <Row>
+                    <Cell align={"middle"}>
+                    &nbsp;
+                    </Cell>
+                </Row>
+                <Row>
+                    <Cell columns={12}>
+                        <Map positions={[upperLeft, upperRight, lowerLeft, lowerRight]}/>
+                    </Cell>
+                </Row>
+            </Grid>
+        </div>
+    );
+};
+
+export default App;
