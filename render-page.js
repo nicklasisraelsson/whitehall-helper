@@ -882,25 +882,6 @@ exports.components = {
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return self;
-}
-
-module.exports = _assertThisInitialized;
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime/helpers/inheritsLoose.js":
 /*!**************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/inheritsLoose.js ***!
@@ -6843,34 +6824,27 @@ if (false) { var parent, cache, hot; } else {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return App; });
 /* harmony import */ var core_js_modules_es6_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es6.object.assign */ "core-js/modules/es6.object.assign");
 /* harmony import */ var core_js_modules_es6_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_object_assign__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ "./node_modules/@babel/runtime/helpers/inheritsLoose.js");
-/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-helmet */ "react-helmet");
-/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_helmet__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _material_react_icon_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material/react-icon-button */ "./node_modules/@material/react-icon-button/dist/index.js");
-/* harmony import */ var _material_react_icon_button__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_react_icon_button__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _material_react_material_icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material/react-material-icon */ "./node_modules/@material/react-material-icon/dist/index.js");
-/* harmony import */ var _material_react_material_icon__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_react_material_icon__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _material_react_layout_grid__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material/react-layout-grid */ "./node_modules/@material/react-layout-grid/dist/index.js");
-/* harmony import */ var _material_react_layout_grid__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _Location__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Location */ "./src/components/Location.jsx");
-/* harmony import */ var _data_locations__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../data/locations */ "./src/data/locations.js");
-/* harmony import */ var _Map__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Map */ "./src/components/Map.jsx");
-/* harmony import */ var _material_react_layout_grid_dist_layout_grid_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material/react-layout-grid/dist/layout-grid.css */ "./node_modules/@material/react-layout-grid/dist/layout-grid.css");
-/* harmony import */ var _material_react_layout_grid_dist_layout_grid_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_react_layout_grid_dist_layout_grid_css__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _material_react_icon_button_dist_icon_button_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material/react-icon-button/dist/icon-button.css */ "./node_modules/@material/react-icon-button/dist/icon-button.css");
-/* harmony import */ var _material_react_icon_button_dist_icon_button_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_react_icon_button_dist_icon_button_css__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _material_react_button_dist_button_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material/react-button/dist/button.css */ "./node_modules/@material/react-button/dist/button.css");
-/* harmony import */ var _material_react_button_dist_button_css__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_material_react_button_dist_button_css__WEBPACK_IMPORTED_MODULE_13__);
-
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-helmet */ "react-helmet");
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_helmet__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_react_icon_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material/react-icon-button */ "./node_modules/@material/react-icon-button/dist/index.js");
+/* harmony import */ var _material_react_icon_button__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_react_icon_button__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_react_material_icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material/react-material-icon */ "./node_modules/@material/react-material-icon/dist/index.js");
+/* harmony import */ var _material_react_material_icon__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_react_material_icon__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_react_layout_grid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material/react-layout-grid */ "./node_modules/@material/react-layout-grid/dist/index.js");
+/* harmony import */ var _material_react_layout_grid__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Location__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Location */ "./src/components/Location.jsx");
+/* harmony import */ var _data_locations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../data/locations */ "./src/data/locations.js");
+/* harmony import */ var _Map__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Map */ "./src/components/Map.jsx");
+/* harmony import */ var _material_react_layout_grid_dist_layout_grid_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material/react-layout-grid/dist/layout-grid.css */ "./node_modules/@material/react-layout-grid/dist/layout-grid.css");
+/* harmony import */ var _material_react_layout_grid_dist_layout_grid_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_react_layout_grid_dist_layout_grid_css__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_react_icon_button_dist_icon_button_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material/react-icon-button/dist/icon-button.css */ "./node_modules/@material/react-icon-button/dist/icon-button.css");
+/* harmony import */ var _material_react_icon_button_dist_icon_button_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_react_icon_button_dist_icon_button_css__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _material_react_button_dist_button_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material/react-button/dist/button.css */ "./node_modules/@material/react-button/dist/button.css");
+/* harmony import */ var _material_react_button_dist_button_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_react_button_dist_button_css__WEBPACK_IMPORTED_MODULE_11__);
 
 
 
@@ -6892,121 +6866,102 @@ var getRandomLocation = function getRandomLocation(possibleLocations) {
   return possibleLocations[getRandom(possibleLocations.length)];
 };
 
-var App =
-/*#__PURE__*/
-function (_React$Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_2___default()(App, _React$Component);
+var App = function App() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(getRandomLocation(_data_locations__WEBPACK_IMPORTED_MODULE_7__["default"].upperLeft)),
+      upperLeft = _useState[0],
+      setUpperLeft = _useState[1];
 
-  function App(props) {
-    var _this;
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(getRandomLocation(_data_locations__WEBPACK_IMPORTED_MODULE_7__["default"].upperRight)),
+      upperRight = _useState2[0],
+      setUpperRight = _useState2[1];
 
-    _this = _React$Component.call(this, props) || this;
-    _this.state = {
-      upperLeft: getRandomLocation(_data_locations__WEBPACK_IMPORTED_MODULE_9__["default"].upperLeft),
-      upperRight: getRandomLocation(_data_locations__WEBPACK_IMPORTED_MODULE_9__["default"].upperRight),
-      lowerLeft: getRandomLocation(_data_locations__WEBPACK_IMPORTED_MODULE_9__["default"].lowerLeft),
-      lowerRight: getRandomLocation(_data_locations__WEBPACK_IMPORTED_MODULE_9__["default"].lowerRight)
-    };
-    _this.reRoll = _this.reRoll.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1___default()(_this));
-    _this.toggleKeepUL = _this.toggleKeepUL.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1___default()(_this));
-    _this.toggleKeepUR = _this.toggleKeepUR.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1___default()(_this));
-    _this.toggleKeepLL = _this.toggleKeepLL.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1___default()(_this));
-    _this.toggleKeepLR = _this.toggleKeepLR.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1___default()(_this));
-    return _this;
-  }
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(getRandomLocation(_data_locations__WEBPACK_IMPORTED_MODULE_7__["default"].lowerLeft)),
+      lowerLeft = _useState3[0],
+      setLowerLeft = _useState3[1];
 
-  var _proto = App.prototype;
+  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(getRandomLocation(_data_locations__WEBPACK_IMPORTED_MODULE_7__["default"].lowerRight)),
+      lowerRight = _useState4[0],
+      setLowerRight = _useState4[1];
 
-  _proto.getLocations = function getLocations() {
-    return {
-      upperLeft: this.state.upperLeft.keep ? this.state.upperLeft : getRandomLocation(_data_locations__WEBPACK_IMPORTED_MODULE_9__["default"].upperLeft),
-      upperRight: this.state.upperRight.keep ? this.state.upperRight : getRandomLocation(_data_locations__WEBPACK_IMPORTED_MODULE_9__["default"].upperRight),
-      lowerLeft: this.state.lowerLeft.keep ? this.state.lowerLeft : getRandomLocation(_data_locations__WEBPACK_IMPORTED_MODULE_9__["default"].lowerLeft),
-      lowerRight: this.state.lowerRight.keep ? this.state.lowerRight : getRandomLocation(_data_locations__WEBPACK_IMPORTED_MODULE_9__["default"].lowerRight)
-    };
+  var reRoll = function reRoll() {
+    setUpperLeft(upperLeft.keep ? upperLeft : getRandomLocation(_data_locations__WEBPACK_IMPORTED_MODULE_7__["default"].upperLeft));
+    setUpperRight(upperRight.keep ? upperRight : getRandomLocation(_data_locations__WEBPACK_IMPORTED_MODULE_7__["default"].upperRight));
+    setLowerLeft(lowerLeft.keep ? lowerLeft : getRandomLocation(_data_locations__WEBPACK_IMPORTED_MODULE_7__["default"].lowerLeft));
+    setLowerRight(lowerRight.keep ? lowerRight : getRandomLocation(_data_locations__WEBPACK_IMPORTED_MODULE_7__["default"].lowerRight));
   };
 
-  _proto.toggleKeepUL = function toggleKeepUL() {
-    this.setState({
-      upperLeft: Object.assign({}, this.state.upperLeft, {
-        keep: !this.state.upperLeft.keep
-      })
-    });
+  var toggleKeepUL = function toggleKeepUL() {
+    setUpperLeft(Object.assign({}, upperLeft, {
+      keep: !upperLeft.keep
+    }));
   };
 
-  _proto.toggleKeepUR = function toggleKeepUR() {
-    this.setState({
-      upperRight: Object.assign({}, this.state.upperRight, {
-        keep: !this.state.upperRight.keep
-      })
-    });
+  var toggleKeepUR = function toggleKeepUR() {
+    setUpperRight(Object.assign({}, upperRight, {
+      keep: !upperRight.keep
+    }));
   };
 
-  _proto.toggleKeepLL = function toggleKeepLL() {
-    this.setState({
-      lowerLeft: Object.assign({}, this.state.lowerLeft, {
-        keep: !this.state.lowerLeft.keep
-      })
-    });
+  var toggleKeepLL = function toggleKeepLL() {
+    setLowerLeft(Object.assign({}, lowerLeft, {
+      keep: !lowerLeft.keep
+    }));
   };
 
-  _proto.toggleKeepLR = function toggleKeepLR() {
-    this.setState({
-      lowerRight: Object.assign({}, this.state.lowerRight, {
-        keep: !this.state.lowerRight.keep
-      })
-    });
+  var toggleKeepLR = function toggleKeepLR() {
+    setLowerRight(Object.assign({}, lowerRight, {
+      keep: !lowerRight.keep
+    }));
   };
 
-  _proto.reRoll = function reRoll() {
-    this.setState(this.getLocations());
-  };
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_2__["Helmet"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
+    href: "https://fonts.googleapis.com/icon?family=Material+Icons",
+    rel: "stylesheet"
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_5__["Grid"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_5__["Row"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_5__["Cell"], {
+    columns: 1,
+    align: "middle"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Location__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    description: "Upper left",
+    location: upperLeft,
+    onKeep: toggleKeepUL
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_5__["Cell"], {
+    columns: 1,
+    align: "middle"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Location__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    description: "Upper right",
+    location: upperRight,
+    onKeep: toggleKeepUR
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_5__["Cell"], {
+    columns: 1,
+    align: "middle"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Location__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    description: "Lower left",
+    location: lowerLeft,
+    onKeep: toggleKeepLL
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_5__["Cell"], {
+    columns: 1,
+    align: "middle"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Location__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    description: "Lower right",
+    location: lowerRight,
+    onKeep: toggleKeepLR
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_5__["Cell"], {
+    columns: 1,
+    align: "middle"
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_react_icon_button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    onClick: reRoll
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_react_material_icon__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    icon: "refresh"
+  })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_5__["Row"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_5__["Cell"], {
+    align: "middle"
+  }, "\xA0")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_5__["Row"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_5__["Cell"], {
+    columns: 12
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Map__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    positions: [upperLeft, upperRight, lowerLeft, lowerRight]
+  })))));
+};
 
-  _proto.render = function render() {
-    return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_4__["Helmet"], null, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("link", {
-      href: "https://fonts.googleapis.com/icon?family=Material+Icons",
-      rel: "stylesheet"
-    })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_7__["Grid"], null, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_7__["Row"], null, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_7__["Cell"], {
-      columns: 1
-    }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Location__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      description: "Upper left",
-      location: this.state.upperLeft,
-      onKeep: this.toggleKeepUL
-    })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_7__["Cell"], {
-      columns: 1
-    }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Location__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      description: "Upper right",
-      location: this.state.upperRight,
-      onKeep: this.toggleKeepUR
-    })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_7__["Cell"], {
-      columns: 1
-    }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Location__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      description: "Lower left",
-      location: this.state.lowerLeft,
-      onKeep: this.toggleKeepLL
-    })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_7__["Cell"], {
-      columns: 1
-    }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Location__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      description: "Lower right",
-      location: this.state.lowerRight,
-      onKeep: this.toggleKeepLR
-    })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_7__["Cell"], {
-      columns: 1
-    }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_react_icon_button__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      onClick: this.reRoll
-    }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_react_material_icon__WEBPACK_IMPORTED_MODULE_6___default.a, {
-      icon: "refresh"
-    })))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_7__["Row"], null, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_react_layout_grid__WEBPACK_IMPORTED_MODULE_7__["Cell"], {
-      columns: 12
-    }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Map__WEBPACK_IMPORTED_MODULE_10__["default"], {
-      positions: [this.state.upperLeft, this.state.upperRight, this.state.lowerLeft, this.state.lowerRight]
-    })))));
-  };
-
-  return App;
-}(react__WEBPACK_IMPORTED_MODULE_3___default.a.Component);
-
-
+/* harmony default export */ __webpack_exports__["default"] = (App);
 
 /***/ }),
 
@@ -7044,16 +6999,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Map; });
 /* harmony import */ var core_js_modules_es6_array_fill__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es6.array.fill */ "core-js/modules/es6.array.fill");
 /* harmony import */ var core_js_modules_es6_array_fill__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_array_fill__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ "./node_modules/@babel/runtime/helpers/inheritsLoose.js");
-/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _data_whitehall_map_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data/whitehall-map.png */ "./src/data/whitehall-map.png");
-/* harmony import */ var _data_whitehall_map_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_data_whitehall_map_png__WEBPACK_IMPORTED_MODULE_3__);
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _data_whitehall_map_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/whitehall-map.png */ "./src/data/whitehall-map.png");
+/* harmony import */ var _data_whitehall_map_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_data_whitehall_map_png__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -7061,93 +7012,74 @@ var maxWidth = 1024;
 var minWidth = 200;
 var totalPadding = 48;
 
-var Map =
-/*#__PURE__*/
-function (_React$Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1___default()(Map, _React$Component);
+var Map = function Map(_ref) {
+  var positions = _ref.positions;
 
-  function Map(props) {
-    var _this;
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
+      image = _useState[0],
+      setImage = _useState[1];
 
-    _this = _React$Component.call(this, props) || this;
-    _this.state = {
-      image: null,
-      scale: 1
-    };
-    return _this;
-  }
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(1),
+      scale = _useState2[0],
+      setScale = _useState2[1];
 
-  var _proto = Map.prototype;
+  var canvas = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(null);
 
-  _proto.componentDidMount = function componentDidMount() {
-    var _this2 = this;
-
-    var image = new Image();
-    this.setState({
-      image: image
-    });
-
-    image.onload = function () {
-      _this2.updateCanvas();
-    };
-
-    image.src = _data_whitehall_map_png__WEBPACK_IMPORTED_MODULE_3___default.a;
-    this.setScale();
-    window.addEventListener("resize", function () {
-      _this2.setScale();
-    });
-  };
-
-  _proto.setScale = function setScale() {
-    var scale = 1;
+  var updateScale = function updateScale() {
+    var newScale = 1;
     var width = Math.min(document.documentElement.clientWidth, window.innerWidth || minWidth);
 
     if (width < maxWidth) {
-      scale = (width - totalPadding) / maxWidth;
+      newScale = (width - totalPadding) / maxWidth;
     }
 
-    this.setState({
-      scale: scale
-    });
+    setScale(newScale);
   };
 
-  _proto.componentDidUpdate = function componentDidUpdate() {
-    this.updateCanvas();
-  };
-
-  _proto.updateCanvas = function updateCanvas() {
-    var _this3 = this;
-
-    var ctx = this.refs.canvas.getContext("2d");
-    ctx.canvas.width = maxWidth * this.state.scale;
-    ctx.canvas.height = maxWidth * this.state.scale;
-    ctx.globalAlpha = 1;
-    ctx.drawImage(this.state.image, 0, 0, maxWidth * this.state.scale, maxWidth * this.state.scale);
-    ctx.globalAlpha = 0.5;
-    this.props.positions.forEach(function (position) {
-      _this3.drawPosition(ctx, position);
-    });
-  };
-
-  _proto.drawPosition = function drawPosition(ctx, position) {
+  var drawPosition = function drawPosition(ctx, position) {
     ctx.beginPath();
-    ctx.arc(position.x * this.state.scale, position.y * this.state.scale, 15 * this.state.scale, 0, Math.PI * 2, true);
+    ctx.arc(position.x * scale, position.y * scale, 15 * scale, 0, Math.PI * 2, true);
     ctx.fillStyle = position.keep ? "green" : "red";
     ctx.fill();
   };
 
-  _proto.render = function render() {
-    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("canvas", {
-      ref: "canvas",
-      width: maxWidth,
-      height: maxWidth
+  var updateCanvas = function updateCanvas() {
+    if (!canvas || !image) return;
+    var ctx = canvas.current.getContext("2d");
+    ctx.canvas.width = maxWidth * scale;
+    ctx.canvas.height = maxWidth * scale;
+    ctx.globalAlpha = 1;
+    ctx.drawImage(image, 0, 0, maxWidth * scale, maxWidth * scale);
+    ctx.globalAlpha = 0.5;
+    positions.forEach(function (position) {
+      drawPosition(ctx, position);
     });
   };
 
-  return Map;
-}(react__WEBPACK_IMPORTED_MODULE_2___default.a.Component);
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    var newImage = new Image();
+    newImage.src = _data_whitehall_map_png__WEBPACK_IMPORTED_MODULE_2___default.a;
 
+    newImage.onload = function () {
+      setImage(newImage);
+    };
 
+    updateScale();
+    window.addEventListener("resize", function () {
+      updateScale();
+    });
+  }, []);
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    updateCanvas();
+  });
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("canvas", {
+    ref: canvas,
+    width: maxWidth,
+    height: maxWidth
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Map);
 
 /***/ }),
 
